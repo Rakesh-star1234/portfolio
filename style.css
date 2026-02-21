@@ -72,4 +72,21 @@ footer {
     background: #020617;
     padding: 15px;
     font-size: 14px;
+
+}
+
+/* Smooth Fade In Animation */
+body {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
