@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rakesh Portfolio</title>
+
+ <style>
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 80px;
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1f1f1f;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #00bcd4;
+    color: black;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #0097a7;
+    transform: scale(1.05);
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Project Card */
+#projects h3 {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.4s;
+    display: inline-block;
+}
+
+#projects h3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
+
+</style>
+
+</head>
+
+<body>
+    
+
+<nav>
+    <a href="#home" class="button">Home</a>
+    <a href="#projects" class="button">Projects</a>
+    <a href="#contact" class="button">Contact</a>
+</nav>
+
+<h1>Welcome to My Portfolio</h1>
+<h2>Contact Me</h2>
+
+<a href="https://github.com/Rakesh-star1234" target="_blank" class="button">
+    GitHub Profile
+</a>
+
+<a href="https://www.linkedin.com/in/rakesh-kumar-tech" target="_blank" class="button">
+    LinkedIn Profile
+</a>
+
+</body>
+</html>
+</head>
+<body>
+
+    <header>
+        <h1>Rakesh Kumar</h1>
+        <p class="intro">AI/ML Engineer | Java Developer</p>
+        <button class="btn">Resume Coming Soon</button>
+    </header>
+
+    <section>
+        <h2>About Me</h2>
+        <p>
+            I am an AI & ML student passionate about Machine Learning,
+            NLP and Software Development. I build intelligent systems
+            and scalable applications.
+        </p>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <div class="skills">
+            <span>Java</span>
+            <span>Python</span>
+            <span>Machine Learning</span>
+            <span>Data Structures</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>GitHub</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+
+        <div class="project-card">
+            <h3>Multi-Temporal Satellite Image Analysis</h3>
+            <p>Environmental change detection using ML and remote sensing data.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Java Group Chat Application</h3>
+            <p><p>Multi-client real-time chat system using Java sockets with message broadcasting.</p></p>
+        </div>
+
+    </section>
+
+    <section>
+        <section id="contact">
+    <h2>Contact</h2>
+
+    <p>Email: 
+        <a href="mailto:rakeshkumar906559@gmail.com">
+        rakeshkumar906559@gmail.com
+        </a>
+    </p>
+
+    <p>GitHub: 
+        <a href="https://github.com/Rakesh-star1234/Rakesh-Kumar.git" target="_blank"> 
+        github.com/Rakesh-star1234/Rakesh-Kumar.git
+        </a>
+    
+    </p>
+
+    <p>LinkedIn: 
+        <a href="https://www.linkedin.com/in/rakesh-kumar-tech" target="_blank">
+        linkedin.com/in/rakesh-kumar-tech
+        </a>
+    </p>
+</section>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Rakesh Kumar | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
