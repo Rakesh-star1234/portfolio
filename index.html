@@ -6,117 +6,166 @@
 <title>Rakesh Kumar | Portfolio</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
-body {
-    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-    color: white;
-    scroll-behavior: smooth;
+body{
+background:linear-gradient(to right,#2c5364,#203a43,#0f2027);
+color:white;
+scroll-behavior:smooth;
 }
 
 /* HEADER */
-header {
-    position: fixed;
-    width: 100%;
-    background: rgba(0,0,0,0.9);
-    padding: 15px 0;
-    text-align: center;
-    top: 0;
-    z-index: 1000;
+header{
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.9);
+padding:15px 0;
+text-align:center;
+top:0;
+z-index:1000;
 }
 
-header h1 {
-    color: #00ffcc;
-    margin-bottom: 5px;
+header h1{
+color:#00ffcc;
+margin-bottom:5px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 14px;
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-size:14px;
 }
 
-nav a:hover {
-    color: #00ffcc;
+nav a:hover{
+color:#00ffcc;
 }
 
 /* SECTIONS */
-section {
-    padding: 110px 20px 70px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+section{
+padding:110px 20px 70px;
+text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
 }
 
-h2 {
-    margin-bottom: 15px;
-    color: #00ffcc;
+h2{
+margin-bottom:15px;
+color:#00ffcc;
+}
+
+/* HERO */
+.hero{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.profile-pic{
+width:170px;
+height:170px;
+border-radius:50%;
+border:4px solid #00ffcc;
+box-shadow:0 0 25px #00ffcc;
+margin-bottom:20px;
+}
+
+.resume-btn{
+margin-top:20px;
+padding:10px 20px;
+background:#00ffcc;
+color:black;
+text-decoration:none;
+border-radius:25px;
+transition:0.3s;
+}
+
+.resume-btn:hover{
+background:white;
 }
 
 /* SKILLS */
-.skills {
-    max-width: 600px;
-    margin: 30px auto 0;
-    text-align: left;
+.skills{
+max-width:600px;
+margin:30px auto 0;
+text-align:left;
 }
 
-.skill {
-    margin-bottom: 20px;
+.skill{
+margin-bottom:20px;
 }
 
-.skill p {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
+.skill p{
+display:flex;
+justify-content:space-between;
+margin-bottom:5px;
 }
 
-.skill-bar {
-    background: #333;
-    height: 8px;
-    border-radius: 5px;
-    overflow: hidden;
+.skill-bar{
+background:#333;
+height:8px;
+border-radius:5px;
+overflow:hidden;
 }
 
-.skill-progress {
-    height: 8px;
-    background: #00ffcc;
-    width: 0;
-    transition: width 1.5s ease;
+.skill-progress{
+height:8px;
+background:#00ffcc;
+width:0;
+transition:width 1.5s ease;
+}
+
+/* PROJECTS */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1000px;
+margin:30px auto 0;
+}
+
+.project-card{
+background:rgba(255,255,255,0.1);
+padding:20px;
+border-radius:15px;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 15px #00ffcc;
 }
 
 /* CONTACT */
-.contact-links {
-    margin-top: 25px;
+.contact-links{
+margin-top:25px;
 }
 
-.contact-links a {
-    display: inline-block;
-    margin: 8px 12px;
-    padding: 10px 18px;
-    border: 1px solid #00ffcc;
-    border-radius: 25px;
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
+.contact-links a{
+display:inline-block;
+margin:8px 12px;
+padding:10px 18px;
+border:1px solid #00ffcc;
+border-radius:25px;
+text-decoration:none;
+color:white;
+transition:0.3s;
 }
 
-.contact-links a:hover {
-    background: #00ffcc;
-    color: black;
+.contact-links a:hover{
+background:#00ffcc;
+color:black;
 }
 
-/* FOOTER */
-footer {
-    background: rgba(0,0,0,0.9);
-    padding: 20px;
-    text-align: center;
+footer{
+background:rgba(0,0,0,0.9);
+padding:20px;
 }
 </style>
 </head>
@@ -124,108 +173,147 @@ footer {
 <body>
 
 <header>
-    <h1>Rakesh Kumar</h1>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<h1>Rakesh Kumar</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
 <section id="home">
-    <h2>Welcome</h2>
-    <p>Hello! I'm Rakesh Kumar, AI & ML Student.</p>
+<div class="hero">
+<img src="profile.jpg" alt="Rakesh Kumar" class="profile-pic">
+<h2>Hi, I'm Rakesh Kumar</h2>
+<h3><span class="typing"></span></h3>
+<a href="resume.pdf" download class="resume-btn">⬇ Download Resume</a>
+</div>
 </section>
 
 <section id="about">
-    <h2>About Me</h2>
-    <p>I am pursuing M.E. in CSE (AI & ML).,. Passionate about Web Development & Machine Learning.<p>
-I completed my B.Tech in Computer Science from Dev Bhoomi Uttarakhand University and I am currently pursuing M.E. in CSE (AI & ML) from Chandigarh University. I am a passionate computer science student with a strong interest in Web Development and Artificial Intelligence. I am an independent, self-motivated, hardworking, and quick learner who is always dedicated towards achieving goals. I enjoy solving real-world problems through technology and continuously improving my technical and analytical skills.
-</p></p>
+<h2>About Me</h2>
+<p>
+I completed my B.Tech in Computer Science from Dev Bhoomi Uttarakhand University and I am currently pursuing M.E. in CSE (AI & ML) from Chandigarh University. I am a passionate computer science student with strong interest in Artificial Intelligence, Machine Learning, and Web Development. I am an independent, self-motivated, hardworking, and quick learner dedicated towards achieving goals and building impactful technological solutions.
+</p>
 </section>
 
 <section id="skills">
-    <h2>My Skills</h2>
+<h2>My Skills</h2>
+<div class="skills">
 
-    <div class="skills">
-        <div class="skill">
-            <p>HTML <span>80%</span></p>
-            <div class="skill-bar">
-                <div class="skill-progress" data-skill="90%"></div>
-            </div>
-        </div>
+<div class="skill">
+<p>HTML <span>90%</span></p>
+<div class="skill-bar"><div class="skill-progress" data-skill="90%"></div></div>
+</div>
 
-        <div class="skill">
-            <p>CSS <span>75%</span></p>
-            <div class="skill-bar">
-                <div class="skill-progress" data-skill="85%"></div>
-            </div>
-        </div>
+<div class="skill">
+<p>CSS <span>85%</span></p>
+<div class="skill-bar"><div class="skill-progress" data-skill="85%"></div></div>
+</div>
 
-        <div class="skill">
-            <p>Java <span>75%</span></p>
-            <div class="skill-bar">
-                <div class="skill-progress" data-skill="75%"></div>
-            </div>
-        </div>
+<div class="skill">
+<p>Java <span>75%</span></p>
+<div class="skill-bar"><div class="skill-progress" data-skill="75%"></div></div>
+</div>
 
-        <div class="skill">
-            <p>Machine Learning <span>70%</span></p>
-            <div class="skill-bar">
-                <div class="skill-progress" data-skill="70%"></div>
-            </div>
-        </div>
-    </div>
+<div class="skill">
+<p>Machine Learning <span>70%</span></p>
+<div class="skill-bar"><div class="skill-progress" data-skill="70%"></div></div>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<h2>My Projects</h2>
+<div class="projects">
+
+<div class="project-card">
+<h3>Satellite Image Classification</h3>
+<p>Machine Learning model to classify satellite images using advanced algorithms.</p>
+</div>
+
+<div class="project-card">
+<h3>Group Chat Application</h3>
+<p>Java-based real-time chat application for multiple users.</p>
+</div>
+
+<div class="project-card">
+<h3>Portfolio Website</h3>
+<p>Responsive personal portfolio built using HTML, CSS & JavaScript.</p>
+</div>
+
+</div>
 </section>
 
 <section id="contact">
-    <h2>Contact Me</h2>
-    <p>You can connect with me here 👇</p>
-
-    <div class="contact-links">
-        <a href="mailto:rakeshkumar906559@gmail.com">📧 Email</a>
-        <a href="https://linkedin.com/in/www.linkedin.com/in/rakesh-kumar-tech" target="_blank">🔗 LinkedIn</a>
-        <a href="https://github.com/Rakesh-star1234" target="_blank">💻 GitHub</a>
-    </div>
+<h2>Contact Me</h2>
+<p>You can connect with me here 👇</p>
+<div class="contact-links">
+<a href="mailto:rakeshkumar906559@gmail.com">📧 Email</a>
+<a href="#www.linkedin.com/in/rakesh-kumar-tech">🔗 LinkedIn</a>
+<a href="https://github.com/Rakesh-star1234" target="_blank">💻 GitHub</a>
+</div>
 </section>
 
 <footer>
-    <p>© 2026 Rakesh Kumar | All Rights Reserved</p>
+<p>© 2026 Rakesh Kumar | All Rights Reserved</p>
 </footer>
 
 <script>
-const sections = document.querySelectorAll("section");
+const sections=document.querySelectorAll("section");
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-}, { threshold: 0.2 });
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+}
+});
+},{threshold:0.2});
 
-sections.forEach(section => {
-    observer.observe(section);
+sections.forEach(section=>{
+observer.observe(section);
 });
 
-const skillBars = document.querySelectorAll(".skill-progress");
+const skillBars=document.querySelectorAll(".skill-progress");
 
-const skillObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.style.width = entry.target.getAttribute("data-skill");
-        }
-    });
-}, { threshold: 0.5 });
-
-skillBars.forEach(bar => {
-    skillObserver.observe(bar);
+const skillObserver=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.width=entry.target.getAttribute("data-skill");
+}
 });
+},{threshold:0.5});
+
+skillBars.forEach(bar=>{
+skillObserver.observe(bar);
+});
+
+/* Typing Animation */
+const text=["AI & ML Student","Web Developer","Machine Learning Enthusiast"];
+let count=0;
+let index=0;
+let currentText="";
+let letter="";
+
+(function type(){
+if(count===text.length){count=0;}
+currentText=text[count];
+letter=currentText.slice(0,++index);
+document.querySelector(".typing").textContent=letter;
+
+if(letter.length===currentText.length){
+setTimeout(()=>{index=0;count++;},1000);
+}
+setTimeout(type,100);
+})();
 </script>
 
 </body>
 </html>
+
 
 
