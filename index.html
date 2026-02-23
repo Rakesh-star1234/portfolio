@@ -1,16 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Rakesh Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rakesh Kumar | Portfolio</title>
 
- <style>
-
-html {
-    scroll-behavior: smooth;
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    <script>
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    padding: 15px 0;
+    text-align: center;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: #00ffcc;
+    margin-bottom: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #00ffcc;
+}
+
+/* SECTIONS */
+section {
+    padding: 110px 20px 70px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #00ffcc;
+}
+
+/* SKILLS */
+.skills {
+    max-width: 600px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    background: #333;
+    height: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 8px;
+    background: #00ffcc;
+    width: 0;
+    transition: width 1.5s ease;
+}
+
+/* CONTACT */
+.contact-links {
+    margin-top: 25px;
+}
+
+.contact-links a {
+    display: inline-block;
+    margin: 8px 12px;
+    padding: 10px 18px;
+    border: 1px solid #00ffcc;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.contact-links a:hover {
+    background: #00ffcc;
+    color: black;
+}
+
+/* FOOTER */
+footer {
+    background: rgba(0,0,0,0.9);
+    padding: 20px;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Rakesh Kumar</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home">
+    <h2>Welcome</h2>
+    <p>Hello! I'm Rakesh Kumar, AI & ML Student.</p>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>I am pursuing M.E. in CSE (AI & ML). Passionate about Web Development & Machine Learning.</p>
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+
+    <div class="skills">
+        <div class="skill">
+            <p>HTML <span>80%</span></p>
+            <div class="skill-bar">
+                <div class="skill-progress" data-skill="90%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <p>CSS <span>75%</span></p>
+            <div class="skill-bar">
+                <div class="skill-progress" data-skill="85%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <p>Java <span>75%</span></p>
+            <div class="skill-bar">
+                <div class="skill-progress" data-skill="75%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <p>Machine Learning <span>70%</span></p>
+            <div class="skill-bar">
+                <div class="skill-progress" data-skill="70%"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can connect with me here 👇</p>
+
+    <div class="contact-links">
+        <a href="mailto:rakeshkumar906559@gmail.com">📧 Email</a>
+        <a href="https://linkedin.com/in/www.linkedin.com/in/rakesh-kumar-tech" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/Rakesh-star1234" target="_blank">💻 GitHub</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Rakesh Kumar | All Rights Reserved</p>
+</footer>
+
+<script>
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(entries => {
@@ -23,185 +205,23 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 sections.forEach(section => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(40px)";
-    section.style.transition = "all 0.8s ease";
     observer.observe(section);
 });
+
+const skillBars = document.querySelectorAll(".skill-progress");
+
+const skillObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.style.width = entry.target.getAttribute("data-skill");
+        }
+    });
+}, { threshold: 0.5 });
+
+skillBars.forEach(bar => {
+    skillObserver.observe(bar);
+});
 </script>
-    margin: 0;
-    padding-top: 80px;
-    background-color: #121212;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-/* Navbar */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #1f1f1f;
-    padding: 15px 0;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    z-index: 1000;
-}
-
-nav a {
-    margin: 0 15px;
-}
-
-/* Buttons */
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px 5px;
-    background-color: #00bcd4;
-    color: black;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.button:hover {
-    background-color: #0097a7;
-    transform: scale(1.05);
-}
-
-/* Sections */
-section {
-    padding: 60px 20px;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s ease forwards;
-}
-
-/* Animation */
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Project Card */
-#projects h3 {
-    background: #1f1f1f;
-    padding: 20px;
-    border-radius: 15px;
-    transition: 0.4s;
-    display: inline-block;
-}
-
-#projects h3:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
-}
-
-</style>
-
-</head>
-
-<body>
-    
-
-<nav>
-    <a href="#home" class="button">Home</a>
-    <a href="#projects" class="button">Projects</a>
-    <a href="#contact" class="button">Contact</a>
-</nav>
-
-<h1>Welcome to My Portfolio</h1>
-<h2>Contact Me</h2>
-
-<a href="https://github.com/Rakesh-star1234" target="_blank" class="button">
-    GitHub Profile
-</a>
-
-<a href="https://www.linkedin.com/in/rakesh-kumar-tech" target="_blank" class="button">
-    LinkedIn Profile
-</a>
 
 </body>
-</html>
-</head>
-<body>
-
-    <header>
-        <h1>Rakesh Kumar</h1>
-        <p class="intro">AI/ML Engineer | Java Developer</p>
-        <button class="btn">Resume Coming Soon</button>
-    </header>
-
-    <section>
-        <h2>About Me</h2>
-        <p>
-            I am an AI & ML student passionate about Machine Learning,
-            NLP and Software Development. I build intelligent systems
-            and scalable applications.
-        </p>
-    </section>
-
-    <section>
-        <h2>Skills</h2>
-        <div class="skills">
-            <span>Java</span>
-            <span>Python</span>
-            <span>Machine Learning</span>
-            <span>Data Structures</span>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>GitHub</span>
-        </div>
-    </section>
-
-    <section>
-        <h2>Projects</h2>
-
-        <div class="project-card">
-            <h3>Multi-Temporal Satellite Image Analysis</h3>
-            <p>Environmental change detection using ML and remote sensing data.</p>
-        </div>
-
-        <div class="project-card">
-            <h3>Java Group Chat Application</h3>
-            <p><p>Multi-client real-time chat system using Java sockets with message broadcasting.</p></p>
-        </div>
-
-    </section>
-
-    <section>
-        <section id="contact">
-    <h2>Contact</h2>
-
-    <p>Email: 
-        <a href="mailto:rakeshkumar906559@gmail.com">
-        rakeshkumar906559@gmail.com
-        </a>
-    </p>
-
-    <p>GitHub: 
-        <a href="https://github.com/Rakesh-star1234/Rakesh-Kumar.git" target="_blank"> 
-        github.com/Rakesh-star1234/Rakesh-Kumar.git
-        </a>
-    
-    </p>
-
-    <p>LinkedIn: 
-        <a href="https://www.linkedin.com/in/rakesh-kumar-tech" target="_blank">
-        linkedin.com/in/rakesh-kumar-tech
-        </a>
-    </p>
-</section>
-
-    </section>
-
-    <footer>
-        <p>© 2026 Rakesh Kumar | All Rights Reserved</p>
-    </footer>
-
-</body>
-
 </html>
