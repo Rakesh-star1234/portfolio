@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rakesh Kumar | Portfolio</title>
 
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
 <style>
 *{
 margin:0;
@@ -17,6 +19,20 @@ body{
 background:linear-gradient(to right,#2c5364,#203a43,#0f2027);
 color:white;
 scroll-behavior:smooth;
+transition:0.4s;
+}
+
+.light-mode{
+background:white;
+color:black;
+}
+
+/* PARTICLES */
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
 }
 
 /* HEADER */
@@ -44,6 +60,17 @@ font-size:14px;
 
 nav a:hover{
 color:#00ffcc;
+}
+
+.toggle-btn{
+position:absolute;
+right:20px;
+top:15px;
+background:#00ffcc;
+border:none;
+padding:5px 10px;
+border-radius:20px;
+cursor:pointer;
 }
 
 /* SECTIONS */
@@ -172,6 +199,8 @@ padding:20px;
 
 <body>
 
+<div id="particles-js"></div>
+
 <header>
 <h1>Rakesh Kumar</h1>
 <nav>
@@ -181,6 +210,7 @@ padding:20px;
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </nav>
+<button onclick="toggleMode()" class="toggle-btn">🌙</button>
 </header>
 
 <section id="home">
@@ -195,7 +225,7 @@ padding:20px;
 <section id="about">
 <h2>About Me</h2>
 <p>
-I completed my B.Tech in Computer Science from Dev Bhoomi Uttarakhand University and I am currently pursuing M.E. in CSE (AI & ML) from Chandigarh University. I am a passionate computer science student with strong interest in Artificial Intelligence, Machine Learning, and Web Development. I am an independent, self-motivated, hardworking, and quick learner dedicated towards achieving goals and building impactful technological solutions.
+I completed my B.Tech in Computer Science from Dev Bhoomi Uttarakhand University and I am currently pursuing M.E. in CSE (AI & ML) from Chandigarh University. I am a passionate, self-motivated, and hardworking individual with strong interest in Artificial Intelligence, Machine Learning, and Web Development. I am dedicated towards achieving goals and building impactful technological solutions.
 </p>
 </section>
 
@@ -232,17 +262,17 @@ I completed my B.Tech in Computer Science from Dev Bhoomi Uttarakhand University
 
 <div class="project-card">
 <h3>Satellite Image Classification</h3>
-<p>Machine Learning model to classify satellite images using advanced algorithms.</p>
+<p>Machine Learning model to classify satellite images.</p>
 </div>
 
 <div class="project-card">
 <h3>Group Chat Application</h3>
-<p>Java-based real-time chat application for multiple users.</p>
+<p>Java-based real-time chat application.</p>
 </div>
 
 <div class="project-card">
 <h3>Portfolio Website</h3>
-<p>Responsive personal portfolio built using HTML, CSS & JavaScript.</p>
+<p>Responsive personal portfolio built using HTML, CSS & JS.</p>
 </div>
 
 </div>
@@ -252,8 +282,8 @@ I completed my B.Tech in Computer Science from Dev Bhoomi Uttarakhand University
 <h2>Contact Me</h2>
 <p>You can connect with me here 👇</p>
 <div class="contact-links">
-<a href="mailto:rakeshkumar906559@gmail.com">📧 Email</a>
-<a href="#www.linkedin.com/in/rakesh-kumar-tech">🔗 LinkedIn</a>
+<a href="mailto:25MAI10069@cuchd.in">📧 Email</a>
+<a href="#">🔗 LinkedIn</a>
 <a href="https://github.com/Rakesh-star1234" target="_blank">💻 GitHub</a>
 </div>
 </section>
@@ -262,9 +292,16 @@ I completed my B.Tech in Computer Science from Dev Bhoomi Uttarakhand University
 <p>© 2026 Rakesh Kumar | All Rights Reserved</p>
 </footer>
 
-<script>
-const sections=document.querySelectorAll("section");
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
+<script>
+particlesJS("particles-js",{particles:{number:{value:80},size:{value:3},color:{value:"#00ffcc"},line_linked:{enable:true},move:{speed:2}}});
+
+function toggleMode(){
+document.body.classList.toggle("light-mode");
+}
+
+const sections=document.querySelectorAll("section");
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -273,13 +310,9 @@ entry.target.style.transform="translateY(0)";
 }
 });
 },{threshold:0.2});
-
-sections.forEach(section=>{
-observer.observe(section);
-});
+sections.forEach(section=>{observer.observe(section);});
 
 const skillBars=document.querySelectorAll(".skill-progress");
-
 const skillObserver=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -287,24 +320,15 @@ entry.target.style.width=entry.target.getAttribute("data-skill");
 }
 });
 },{threshold:0.5});
+skillBars.forEach(bar=>{skillObserver.observe(bar);});
 
-skillBars.forEach(bar=>{
-skillObserver.observe(bar);
-});
-
-/* Typing Animation */
 const text=["AI & ML Student","Web Developer","Machine Learning Enthusiast"];
-let count=0;
-let index=0;
-let currentText="";
-let letter="";
-
+let count=0,index=0,currentText="",letter="";
 (function type(){
 if(count===text.length){count=0;}
 currentText=text[count];
 letter=currentText.slice(0,++index);
 document.querySelector(".typing").textContent=letter;
-
 if(letter.length===currentText.length){
 setTimeout(()=>{index=0;count++;},1000);
 }
@@ -314,6 +338,3 @@ setTimeout(type,100);
 
 </body>
 </html>
-
-
-
