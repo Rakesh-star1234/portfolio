@@ -1,403 +1,271 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rakesh Kumar | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="description" content="Rakesh Kumar's portfolio showcasing software development, C++, DSA, Python, AI/ML and web development skills and projects.">
+  <meta name="theme-color" content="#0b1120">
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
+  <title>Rakesh Kumar | Software Developer Portfolio</title>
 
-body{
-background:linear-gradient(to right,#2c5364,#203a43,#0f2027);
-color:white;
-scroll-behavior:smooth;
-transition:0.4s;
-}
-
-.light-mode{
-background:white;
-color:black;
-}
-
-/* PARTICLES */
-#particles-js{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-}
-
-/* HEADER */
-header{
-position:fixed;
-width:100%;
-background:rgba(0,0,0,0.9);
-padding:15px 0;
-text-align:center;
-top:0;
-z-index:1000;
-}
-
-header h1{
-color:#00ffcc;
-margin-bottom:5px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin:0 15px;
-font-size:14px;
-}
-
-nav a:hover{
-color:#00ffcc;
-}
-
-.toggle-btn{
-position:absolute;
-right:20px;
-top:15px;
-background:#00ffcc;
-border:none;
-padding:5px 10px;
-border-radius:20px;
-cursor:pointer;
-}
-
-/* SECTIONS */
-section{
-padding:110px 20px 70px;
-text-align:center;
-opacity:0;
-transform:translateY(40px);
-transition:all 0.8s ease;
-}
-
-h2{
-margin-bottom:15px;
-color:#00ffcc;
-}
-
-/* HERO */
-.hero{
-display:flex;
-flex-direction:column;
-align-items:center;
-}
-
-.profile-pic{
-width:170px;
-height:170px;
-border-radius:50%;
-border:4px solid #00ffcc;
-box-shadow:0 0 25px #00ffcc;
-margin-bottom:20px;
-}
-
-.resume-btn{
-margin-top:20px;
-padding:10px 20px;
-background:#00ffcc;
-color:black;
-text-decoration:none;
-border-radius:25px;
-transition:0.3s;
-}
-
-.resume-btn:hover{
-background:white;
-}
-
-/* SKILLS */
-.skills{
-max-width:600px;
-margin:30px auto 0;
-text-align:left;
-}
-
-.skill{
-margin-bottom:20px;
-}
-
-.skill p{
-display:flex;
-justify-content:space-between;
-margin-bottom:5px;
-}
-
-.skill-bar{
-background:#333;
-height:8px;
-border-radius:5px;
-overflow:hidden;
-}
-
-.skill-progress{
-height:8px;
-background:#00ffcc;
-width:0;
-transition:width 1.5s ease;
-}
-
-/* PROJECTS */
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1000px;
-margin:30px auto 0;
-}
-
-.project-card{
-background:rgba(255,255,255,0.1);
-padding:20px;
-border-radius:15px;
-transition:0.3s;
-}
-
-.project-card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 15px #00ffcc;
-}
-
-/* CONTACT */
-.contact-links{
-margin-top:25px;
-}
-
-.contact-links a{
-display:inline-block;
-margin:8px 12px;
-padding:10px 18px;
-border:1px solid #00ffcc;
-border-radius:25px;
-text-decoration:none;
-color:white;
-transition:0.3s;
-}
-
-.contact-links a:hover{
-background:#00ffcc;
-color:black;
-}
-
-footer{
-background:rgba(0,0,0,0.9);
-padding:20px;
-}
-</style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="logo" href="#home">RK<span>.</span></a>
 
-<div id="particles-js"></div>
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        ☰
+      </button>
 
-<header>
-<h1>Rakesh Kumar</h1>
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</nav>
-<button onclick="toggleMode()" class="toggle-btn">🌙</button>
-</header>
+      <div class="nav-links" id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme">
+          ☀️
+        </button>
+      </div>
+    </nav>
+  </header>
 
-<section id="home">
-<div class="hero">
-<img src="profile.jpg" alt="Rakesh Kumar" class="profile-pic">
-<h2>Hi, I'm Rakesh Kumar</h2>
-<h3><span class="typing"></span></h3>
-<a href="resume.pdf" download class="resume-btn">⬇ Download Resume</a>
-</div>
-</section>
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-content">
+        <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
 
-<section id="about">
-<h2>About Me</h2>
-<p>
-I completed my B.Tech in Computer Science from Dev Bhoomi Uttarakhand University and I am currently pursuing M.E. in CSE (AI & ML) from Chandigarh University. I am a passionate, self-motivated, and hardworking individual with strong interest in Artificial Intelligence, Machine Learning, and Web Development. I am dedicated towards achieving goals and building impactful technological solutions.
-</p>
-</section>
+        <h1>Hi, I'm <span class="accent">Rakesh Kumar</span></h1>
 
-<section id="skills">
-<h2>My Skills</h2>
-<div class="skills">
-<div class="skill">
-<p>C++ <span>90%</span></p>
-<div class="skill-bar">
-<div class="skill-progress" data-skill="90%"></div>
-</div>
-</div>
-<div class="skill">
-<p>Python <span>85%</span></p>
-<div class="skill-bar">
-<div class="skill-progress" data-skill="85%"></div>
-</div>
-</div>
+        <h2 class="hero-role">
+          Aspiring <span id="typing-text">Software Developer</span>
+        </h2>
 
-<div class="skill">
-<p>Machine Learning <span>80%</span></p>
-<div class="skill-bar">
-<div class="skill-progress" data-skill="80%"></div>
-</div>
-</div>
+        <p class="hero-description">
+          I am building my skills in C++, Data Structures and Algorithms,
+          Python, AI/ML and Web Development to create practical software
+          solutions and prepare for software engineering opportunities.
+        </p>
 
-<div class="skill">
-<p>HTML / CSS <span>90%</span></p>
-<div class="skill-bar">
-<div class="skill-progress" data-skill="90%"></div>
-</div>
-</div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">Explore My Projects</a>
+          <a class="btn btn-outline" href="#contact">Contact Me</a>
+        </div>
 
-<div class="skill">
-<p>Java (OOPS) <span>75%</span></p>
-<div class="skill-bar">
-<div class="skill-progress" data-skill="75%"></div>
-</div>
-</div>
+        <div class="social-links">
+          <a href="https://github.com/Rakesh-star1234"
+             target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <!-- Add your real LinkedIn profile URL here when available. -->
+        </div>
+      </div>
+    </section>
 
-<div class="skill">
-<p>SQL <span>70%</span></p>
-<div class="skill-bar">
-<div class="skill-progress" data-skill="70%"></div>
-</div>
-</div>
+    <section class="section" id="about">
+      <div class="container">
+        <p class="eyebrow">GET TO KNOW ME</p>
+        <h2 class="section-title">About Me</h2>
 
-<div class="skill">
-<p>Git & GitHub <span>85%</span></p>
-<div class="skill-bar">
-<div class="skill-progress" data-skill="85%"></div>
-</div>
-</div>
+        <div class="about-card">
+          <p>
+            I completed my B.Tech in Computer Science from Dev Bhoomi
+            Uttarakhand University and am currently pursuing an M.E. in
+            Computer Science and Engineering (AI & ML) at Chandigarh University.
+          </p>
+          <p>
+            I am developing my programming and problem-solving skills through
+            C++, DSA, Python and practical projects. I am also learning
+            Artificial Intelligence, Machine Learning and Web Development.
+            My goal is to grow as a software developer by building useful
+            projects and continuously improving my technical skills.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<div class="skill">
-<p>Data Structures <span>70%</span></p>
-<div class="skill-bar">
-<div class="skill-progress" data-skill="70%"></div>
-</div>
-<div class="skill">
-<p>HTML <span>90%</span></p>
-<div class="skill-bar"><div class="skill-progress" data-skill="90%"></div></div>
-</div>
+    <section class="section" id="skills">
+      <div class="container">
+        <p class="eyebrow">WHAT I AM LEARNING</p>
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-description">
+          Technologies and concepts I am learning and practicing.
+        </p>
 
-<div class="skill">
-<p>CSS <span>85%</span></p>
-<div class="skill-bar"><div class="skill-progress" data-skill="85%"></div></div>
-</div>
+        <div class="skills-grid">
+          <article class="skill-card">
+            <span class="skill-icon">C++</span>
+            <h3>C++ Programming</h3>
+            <p>Programming fundamentals, OOP and problem solving</p>
+          </article>
 
-<div class="skill">
-<p>Java <span>75%</span></p>
-<div class="skill-bar"><div class="skill-progress" data-skill="75%"></div></div>
-</div>
+          <article class="skill-card">
+            <span class="skill-icon">DSA</span>
+            <h3>Data Structures & Algorithms</h3>
+            <p>Arrays, searching and coding practice</p>
+          </article>
 
-<div class="skill">
-<p>Machine Learning <span>70%</span></p>
-<div class="skill-bar"><div class="skill-progress" data-skill="70%"></div></div>
-</div>
+          <article class="skill-card">
+            <span class="skill-icon">Py</span>
+            <h3>Python</h3>
+            <p>Python fundamentals and programming practice</p>
+          </article>
 
-</div>
-</section>
+          <article class="skill-card">
+            <span class="skill-icon">AI</span>
+            <h3>AI & Machine Learning</h3>
+            <p>ML concepts, data preparation and model building</p>
+          </article>
 
-<section id="projects">
-<h2>My Projects</h2>
-<div class="projects">
+          <article class="skill-card">
+            <span class="skill-icon">Web</span>
+            <h3>Web Development</h3>
+            <p>HTML, CSS and JavaScript fundamentals</p>
+          </article>
 
-<div class="project-card">
-<h3>Satellite Image Classification</h3>
-<p>
-• Developed a Machine Learning model using Python and Scikit-learn.<br>
-• Extracted NDVI features from satellite image dataset.<br>
-• Applied Random Forest & SVM algorithms for classification.<br>
-• Performed data preprocessing and feature engineering.<br>
-• Achieved 89% accuracy on test dataset.<br>
-• Visualized results using Matplotlib.
-</p>
-<br>
-<a href="https://github.com/Rakesh-star1234" target="_blank">View Code</a>
-</div>
+          <article class="skill-card">
+            <span class="skill-icon">SQL</span>
+            <h3>SQL & Databases</h3>
+            <p>Database queries and core concepts</p>
+          </article>
 
-<div class="project-card">
-<h3>Group Chat Application</h3>
-<p>Java-based real-time chat application.</p>
-</div>
+          <article class="skill-card">
+            <span class="skill-icon">Java</span>
+            <h3>Java & OOP</h3>
+            <p>Java fundamentals and object-oriented concepts</p>
+          </article>
 
-<div class="project-card">
-<h3>Portfolio Website</h3>
-<p>Responsive personal portfolio built using HTML, CSS & JS.</p>
-</div>
+          <article class="skill-card">
+            <span class="skill-icon">Git</span>
+            <h3>Git & GitHub</h3>
+            <p>Version control and project repositories</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-</div>
-</section>
+    <section class="section" id="projects">
+      <div class="container">
+        <p class="eyebrow">MY WORK</p>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-description">
+          A selection of my learning and development work.
+        </p>
 
-<section id="contact">
-<h2>Contact Me</h2>
-<p>You can connect with me here 👇</p>
-<div class="contact-links">
-<a href="mailto:25MAI10069@cuchd.in">📧 Email</a>
-<a href="#">🔗 LinkedIn</a>
-<a href="https://github.com/Rakesh-star1234" target="_blank">💻 GitHub</a>
-</div>
-</section>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-label">C++ · DSA</span>
+              <span class="project-symbol">&lt;/&gt;</span>
+            </div>
+            <h3>C++ Programming and DSA Practice</h3>
+            <p>
+              A topic-wise collection of C++ programming exercises and
+              Data Structures and Algorithms practice for strengthening
+              problem-solving skills.
+            </p>
+            <div class="tag-list">
+              <span>C++</span><span>DSA</span><span>Problem Solving</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/Rakesh-star1234/DSA-CPP"
+               target="_blank" rel="noopener noreferrer">View Repository ↗</a>
+          </article>
 
-<footer>
-<p>© 2026 Rakesh Kumar | All Rights Reserved</p>
-</footer>
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-label">Python · AI/ML</span>
+              <span class="project-symbol">AI</span>
+            </div>
+            <h3>Python and AI/ML Practice</h3>
+            <p>
+              Python programming exercises and learning work focused on
+              building a foundation in Artificial Intelligence and
+              Machine Learning.
+            </p>
+            <div class="tag-list">
+              <span>Python</span><span>AI/ML</span><span>Learning</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/Rakesh-star1234/AI-ML"
+               target="_blank" rel="noopener noreferrer">View Repository ↗</a>
+          </article>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-label">HTML · CSS · JavaScript</span>
+              <span class="project-symbol">WEB</span>
+            </div>
+            <h3>Web Technology Practice</h3>
+            <p>
+              A repository for learning web development fundamentals and
+              practicing frontend technologies through code and projects.
+            </p>
+            <div class="tag-list">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/Rakesh-star1234/Web-Technology"
+               target="_blank" rel="noopener noreferrer">View Repository ↗</a>
+          </article>
 
-<script>
-particlesJS("particles-js",{particles:{number:{value:80},size:{value:3},color:{value:"#00ffcc"},line_linked:{enable:true},move:{speed:2}}});
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-label">Frontend</span>
+              <span class="project-symbol">RK</span>
+            </div>
+            <h3>Personal Portfolio Website</h3>
+            <p>
+              My personal website for presenting my technical skills,
+              projects, learning journey and contact information.
+            </p>
+            <div class="tag-list">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/Rakesh-star1234/portfolio"
+               target="_blank" rel="noopener noreferrer">View Repository ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-function toggleMode(){
-document.body.classList.toggle("light-mode");
-}
+    <section class="section" id="contact">
+      <div class="container">
+        <p class="eyebrow">LET'S CONNECT</p>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-description">
+          Interested in my work or want to connect? Feel free to reach out.
+        </p>
 
-const sections=document.querySelectorAll("section");
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.style.opacity="1";
-entry.target.style.transform="translateY(0)";
-}
-});
-},{threshold:0.2});
-sections.forEach(section=>{observer.observe(section);});
+        <div class="contact-card">
+          <a class="btn btn-primary" href="mailto:25MAI10069@cuchd.in">
+            Email Me
+          </a>
+          <a class="btn btn-outline"
+             href="https://github.com/Rakesh-star1234"
+             target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-const skillBars=document.querySelectorAll(".skill-progress");
-const skillObserver=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.style.width=entry.target.getAttribute("data-skill");
-}
-});
-},{threshold:0.5});
-skillBars.forEach(bar=>{skillObserver.observe(bar);});
-
-const text=["AI & ML Student","Web Developer","Machine Learning Enthusiast"];
-let count=0,index=0,currentText="",letter="";
-(function type(){
-if(count===text.length){count=0;}
-currentText=text[count];
-letter=currentText.slice(0,++index);
-document.querySelector(".typing").textContent=letter;
-if(letter.length===currentText.length){
-setTimeout(()=>{index=0;count++;},1000);
-}
-setTimeout(type,100);
-})();
-</script>
-
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="current-year">2026</span> Rakesh Kumar. Built while learning and growing.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
 </body>
 </html>
-
-
